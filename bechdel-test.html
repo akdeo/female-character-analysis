@@ -11746,9 +11746,23 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Gender-Equality-in-Film:-The-Bechdel-Test">Gender Equality in Film: The Bechdel Test<a class="anchor-link" href="#Gender-Equality-in-Film:-The-Bechdel-Test">&#182;</a></h1><p>Based on the Bechdel Test criteria:</p>
+
+<pre><code>- More than two female characters
+- Female characters talk to each other
+- Female characters talk about something other than men</code></pre>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[144]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
@@ -11805,14 +11819,62 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[145]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bechdel</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;datasets/2010_2014MoviesTested.csv&#39;</span><span class="p">)</span>
 <span class="n">passes_bechdel</span> <span class="o">=</span> <span class="n">bechdel</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">)</span>
 <span class="n">fails_bechdel</span> <span class="o">=</span> <span class="n">bechdel</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;No&#39;</span><span class="p">)</span>
 
-<span class="n">proportion_of_passes</span> <span class="o">=</span> <span class="n">passes_bechdel</span><span class="o">.</span><span class="n">num_rows</span><span class="o">/</span><span class="n">bechdel</span><span class="o">.</span><span class="n">num_rows</span>
+<span class="n">bechdel</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Movie Title</th> <th>Passes Bechdel Test?</th> <th>Number of Criteria Passed</th> <th>Clarity of Pass</th> <th>Has at least two [named] women in it</th> <th>The women talk to each other</th> <th>The women talk about something besides a man</th> <th>Genre</th> <th>Director</th> <th>Main Actors</th> <th>Production Comapany</th> <th>Plot Keywords (top 10)</th> <th>Year</th> <th>Rating</th> <th>Runtime (min)</th> <th>Plot</th> <th>Language</th> <th>Country</th> <th>Image</th> <th>IMDb Popularity Score</th> <th>Award Popularity</th> <th>IMDb rating</th> <th>IMDb votes</th> <th>Nominations</th> <th>Wins</th> <th>IMDB Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>[REC]3 Genesis (2012)</td> <td>Yes                 </td> <td>3                        </td> <td>Clear          </td> <td>Pass                                </td> <td>Pass                        </td> <td>Pass                                        </td> <td>Horror          </td> <td>Paco Plaza    </td> <td>Leticia Dolera, Diego Martín, Ismael Martínez, Àlex Monner</td> <td>Canal+ España, Filmax, Generalitat de Catalunya - Instit ...</td> <td>wedding, infection, church, third part, female stockinge ...</td> <td>2012</td> <td>Restricted</td> <td>80           </td> <td>A couple's wedding day turns horrific as some of the gue ...</td> <td>Spanish, Catalan, French</td> <td>Spain        </td> <td>http://ia.media-imdb.com/images/M/MV5BNDM3OTUzMTA1OF5BMl ...</td> <td>101266               </td> <td>21              </td> <td>5.1        </td> <td>19,856    </td> <td>6          </td> <td>3   </td> <td>http://www.imdb.com/title/tt1649444/</td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>+1 (2013)            </td> <td>Yes                 </td> <td>3                        </td> <td>Dubious        </td> <td>Pass                                </td> <td>Pass                        </td> <td>Pass                                        </td> <td>Sci-Fi, Thriller</td> <td>Dennis Iliadis</td> <td>Rhys Wakefield, Logan Miller, Ashley Hinshaw, Natalie Hall</td> <td>Process Films, Process Media                                </td> <td>party, college, hero kills a woman, woman stabbed, nude  ...</td> <td>2013</td> <td>Not Rated </td> <td>95           </td> <td>Three college friends hit the biggest party of the year, ...</td> <td>English                 </td> <td>United States</td> <td>http://ia.media-imdb.com/images/M/MV5BMTQwOTA5Mzc3Ml5BMl ...</td> <td>22693                </td> <td>nan             </td> <td>5.5        </td> <td>4,126     </td> <td>nan        </td> <td>nan </td> <td>http://www.imdb.com/title/tt2395385/</td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>11 Flowers (2011)    </td> <td>Yes                 </td> <td>3                        </td> <td>Dubious        </td> <td>Pass                                </td> <td>Pass                        </td> <td>Pass                                        </td> <td>Drama           </td> <td>Xiaoshuai Wang</td> <td>Gang Cao, Shiping Cao, Wenqing Liu, Yihao Lou             </td> <td>nan                                                         </td> <td>childhood friend, pregnant from rape, sentenced to death ...</td> <td>2011</td> <td>Not Rated </td> <td>110          </td> <td>nan                                                         </td> <td>Mandarin, Shanghainese  </td> <td>China, France</td> <td>http://ia.media-imdb.com/images/M/MV5BMTQwOTYyMTU1NF5BMl ...</td> <td>2583                 </td> <td>6               </td> <td>7          </td> <td>369       </td> <td>6          </td> <td>nan </td> <td>http://www.imdb.com/title/tt2042432/</td>
+        </tr>
+    </tbody>
+</table>
+<p>... (1450 rows omitted)</p
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[146]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">proportion_of_passes</span> <span class="o">=</span> <span class="n">passes_bechdel</span><span class="o">.</span><span class="n">num_rows</span><span class="o">/</span><span class="n">bechdel</span><span class="o">.</span><span class="n">num_rows</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">proportion_of_passes</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;% movies from our dataset pass the bechdel test&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -11840,21 +11902,21 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Genre-Analysis">Genre Analysis<a class="anchor-link" href="#Genre-Analysis">&#182;</a></h3><p>For the movies that don't pass, do a frequency count on the genres to compare the most common entries</p>
+<h2 id="Genre-Analysis">Genre Analysis<a class="anchor-link" href="#Genre-Analysis">&#182;</a></h2><p>For the movies that don't pass, do a frequency count on the genres to compare the most common entries</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[147]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">list_flattening</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">l</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">]</span>
 
-<span class="k">def</span> <span class="nf">clean_genres</span><span class="p">(</span><span class="n">table</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">list_flattening</span><span class="p">([</span><span class="n">genre</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">genre</span> <span class="ow">in</span> <span class="n">table</span><span class="p">[</span><span class="s1">&#39;Genre&#39;</span><span class="p">]])</span>
+<span class="k">def</span> <span class="nf">clean_words</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">list_flattening</span><span class="p">([</span><span class="n">genre</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">genre</span> <span class="ow">in</span> <span class="n">table</span><span class="p">[</span><span class="n">col</span><span class="p">]])</span>
     
 </pre></div>
 
@@ -11865,10 +11927,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[148]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f_genres</span> <span class="o">=</span> <span class="n">clean_genres</span><span class="p">(</span><span class="n">fails_bechdel</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f_genres</span> <span class="o">=</span> <span class="n">clean_words</span><span class="p">(</span><span class="n">fails_bechdel</span><span class="p">,</span> <span class="s1">&#39;Genre&#39;</span><span class="p">)</span>
 <span class="n">f_genre_count</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;Genre&#39;</span><span class="p">,</span> <span class="n">f_genres</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;Genre&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">descending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">f_genre_count</span> <span class="o">=</span> <span class="n">f_genre_count</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;f proportion&#39;</span><span class="p">,</span> <span class="n">f_genre_count</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">f_genre_count</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]))</span>
 <span class="n">f_genre_count</span>
@@ -11882,7 +11944,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[43]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[148]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <table border="1" class="dataframe">
@@ -11944,7 +12006,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[149]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">p_genres</span> <span class="o">=</span> <span class="n">clean_genres</span><span class="p">(</span><span class="n">passes_bechdel</span><span class="p">)</span>
@@ -11961,7 +12023,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[47]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[149]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <table border="1" class="dataframe">
@@ -12033,11 +12095,14 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[222]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">genre_count</span> <span class="o">=</span> <span class="n">p_genre_count</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Genre&quot;</span><span class="p">,</span> <span class="n">f_genre_count</span><span class="p">)</span>
-<span class="n">genre_count</span><span class="o">.</span><span class="n">append_column</span><span class="p">(</span><span class="s1">&#39;disparity&#39;</span><span class="p">,</span> <span class="n">genre_count</span><span class="p">[</span><span class="s1">&#39;f proportion&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">genre_count</span><span class="p">[</span><span class="s1">&#39;p proportion&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The genres listed below are the genres which have a higher proportion of failed bechdel</span>
+<span class="c1"># movies than passed bechdel movies</span>
+
+<span class="n">genre_count</span> <span class="o">=</span> <span class="n">p_genre_count</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Genre&quot;</span><span class="p">,</span> <span class="n">f_genre_count</span><span class="p">)</span>
+<span class="n">genre_count</span><span class="o">.</span><span class="n">append_column</span><span class="p">(</span><span class="s1">&#39;disparity&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">genre_count</span><span class="p">[</span><span class="s1">&#39;f proportion&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">genre_count</span><span class="p">[</span><span class="s1">&#39;p proportion&#39;</span><span class="p">])</span><span class="o">*</span><span class="mi">1000</span><span class="p">)</span>
 <span class="n">genre_count</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;disparity&#39;</span><span class="p">,</span> <span class="n">descending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
@@ -12049,7 +12114,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[51]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[222]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <table border="1" class="dataframe">
@@ -12060,43 +12125,43 @@ div#notebook {
     </thead>
     <tbody>
         <tr>
-            <td>Action   </td> <td>119  </td> <td>0.0589109   </td> <td>139    </td> <td>0.113841    </td> <td>0.0549302 </td>
+            <td>Action   </td> <td>119  </td> <td>0.0589109   </td> <td>139    </td> <td>0.113841    </td> <td>54.9302  </td>
         </tr>
     </tbody>
         <tr>
-            <td>Crime    </td> <td>79   </td> <td>0.0391089   </td> <td>84     </td> <td>0.0687961   </td> <td>0.0296872 </td>
+            <td>Crime    </td> <td>79   </td> <td>0.0391089   </td> <td>84     </td> <td>0.0687961   </td> <td>29.6872  </td>
         </tr>
     </tbody>
         <tr>
-            <td>Thriller </td> <td>146  </td> <td>0.0722772   </td> <td>111    </td> <td>0.0909091   </td> <td>0.0186319 </td>
+            <td>Thriller </td> <td>146  </td> <td>0.0722772   </td> <td>111    </td> <td>0.0909091   </td> <td>18.6319  </td>
         </tr>
     </tbody>
         <tr>
-            <td>Adventure</td> <td>108  </td> <td>0.0534653   </td> <td>83     </td> <td>0.0679771   </td> <td>0.0145117 </td>
+            <td>Adventure</td> <td>108  </td> <td>0.0534653   </td> <td>83     </td> <td>0.0679771   </td> <td>14.5117  </td>
         </tr>
     </tbody>
         <tr>
-            <td>Sci-Fi   </td> <td>76   </td> <td>0.0376238   </td> <td>58     </td> <td>0.047502    </td> <td>0.00987829</td>
+            <td>Sci-Fi   </td> <td>76   </td> <td>0.0376238   </td> <td>58     </td> <td>0.047502    </td> <td>9.87829  </td>
         </tr>
     </tbody>
         <tr>
-            <td>War      </td> <td>7    </td> <td>0.00346535  </td> <td>11     </td> <td>0.00900901  </td> <td>0.00554366</td>
+            <td>War      </td> <td>7    </td> <td>0.00346535  </td> <td>11     </td> <td>0.00900901  </td> <td>5.54366  </td>
         </tr>
     </tbody>
         <tr>
-            <td>Western  </td> <td>1    </td> <td>0.00049505  </td> <td>7      </td> <td>0.00573301  </td> <td>0.00523796</td>
+            <td>Western  </td> <td>1    </td> <td>0.00049505  </td> <td>7      </td> <td>0.00573301  </td> <td>5.23796  </td>
         </tr>
     </tbody>
         <tr>
-            <td>Biography</td> <td>43   </td> <td>0.0212871   </td> <td>32     </td> <td>0.026208    </td> <td>0.0049209 </td>
+            <td>Biography</td> <td>43   </td> <td>0.0212871   </td> <td>32     </td> <td>0.026208    </td> <td>4.9209   </td>
         </tr>
     </tbody>
         <tr>
-            <td>Sport    </td> <td>7    </td> <td>0.00346535  </td> <td>10     </td> <td>0.00819001  </td> <td>0.00472466</td>
+            <td>Sport    </td> <td>7    </td> <td>0.00346535  </td> <td>10     </td> <td>0.00819001  </td> <td>4.72466  </td>
         </tr>
     </tbody>
         <tr>
-            <td>Short    </td> <td>2    </td> <td>0.000990099 </td> <td>5      </td> <td>0.004095    </td> <td>0.00310491</td>
+            <td>Short    </td> <td>2    </td> <td>0.000990099 </td> <td>5      </td> <td>0.004095    </td> <td>3.10491  </td>
         </tr>
     </tbody>
 </table>
@@ -12109,24 +12174,412 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[225]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Exporting to CSV</span>
+<span class="n">genre_list</span> <span class="o">=</span> <span class="n">genre_count</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;disparity&#39;</span><span class="p">,</span> <span class="s1">&#39;Genre&#39;</span><span class="p">)</span>
+<span class="n">clean</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">genre_list</span> <span class="o">=</span> <span class="n">genre_list</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;disparity&#39;</span><span class="p">,</span> <span class="n">genre_list</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">clean</span><span class="p">,</span> <span class="s2">&quot;disparity&quot;</span><span class="p">))</span>
+<span class="n">genre_list</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;disparity&#39;</span><span class="p">,</span> <span class="n">descending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;genre_list.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Plot-Keywords">Plot Keywords<a class="anchor-link" href="#Plot-Keywords">&#182;</a></h3><p>What are the words in the top 10 plot keywords that most indicate a negative bechdel result</p>
+<h4 id="Failing-Bechdel-Test-Genres">Failing Bechdel Test Genres<a class="anchor-link" href="#Failing-Bechdel-Test-Genres">&#182;</a></h4><p><img src="word_cloud_genre_n.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Genres-of-Movies-that-Pass-Bechdel-Test">Genres of Movies that Pass Bechdel Test<a class="anchor-link" href="#Genres-of-Movies-that-Pass-Bechdel-Test">&#182;</a></h4><p><img src="word_cloud_genre_p.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Plot-Keywords">Plot Keywords<a class="anchor-link" href="#Plot-Keywords">&#182;</a></h2><p>What are the words in the top 10 plot keywords that most indicate a negative bechdel result</p>
 
 <pre><code>- which words are the most distinctly negative words</code></pre>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[185]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import the snowball stemmer from the nltk to make each word their root</span>
+<span class="kn">from</span> <span class="nn">nltk</span> <span class="k">import</span> <span class="n">stem</span>
+<span class="n">lancaster</span> <span class="o">=</span> <span class="n">stem</span><span class="o">.</span><span class="n">lancaster</span><span class="o">.</span><span class="n">LancasterStemmer</span><span class="p">()</span>
+<span class="n">snowball</span> <span class="o">=</span> <span class="n">stem</span><span class="o">.</span><span class="n">snowball</span><span class="o">.</span><span class="n">EnglishStemmer</span><span class="p">()</span>
+<span class="n">porter</span> <span class="o">=</span> <span class="n">stem</span><span class="o">.</span><span class="n">porter</span><span class="o">.</span><span class="n">PorterStemmer</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="k">import</span> <span class="n">stopwords</span>
+<span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">remove_punct_words</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)):</span>
+        <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+        <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">j</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+        <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">snowball</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s2">&quot;nan&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">lst</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[187]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tables</span> <span class="o">=</span> <span class="p">[</span><span class="n">bechdel</span><span class="p">,</span> <span class="n">passes_bechdel</span><span class="p">,</span> <span class="n">fails_bechdel</span><span class="p">]</span>
+<span class="n">k_words</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">tbl</span> <span class="ow">in</span> <span class="n">tables</span><span class="p">:</span>
+    <span class="n">k_words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">remove_punct_words</span><span class="p">(</span><span class="n">clean_words</span><span class="p">(</span><span class="n">tables</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;Plot Keywords (top 10)&#39;</span><span class="p">)))</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[188]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">k_words</span><span class="p">)):</span>
+    <span class="n">k_words</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">list_flattening</span><span class="p">(</span><span class="n">k_words</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[189]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">k_dicts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">k_tables</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">k_words</span><span class="p">)):</span>
+    <span class="n">dict_vals</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">k_words</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">dict_vals</span><span class="p">[</span><span class="s1">&#39;titl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">k_dicts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dict_vals</span><span class="p">)</span>
+    <span class="n">k_tables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="s2">&quot;Stemmed Words&quot;</span><span class="p">,</span> <span class="n">dict_vals</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span>
+                                        <span class="s2">&quot;Count&quot;</span><span class="p">,</span> <span class="n">dict_vals</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[190]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">passed_kw</span> <span class="o">=</span> <span class="n">k_tables</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">failed_kw</span> <span class="o">=</span> <span class="n">k_tables</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">failed_kw</span> <span class="o">=</span> <span class="n">failed_kw</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">,</span> <span class="n">descending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;Proportion&#39;</span><span class="p">,</span> \
+                                                <span class="n">failed_kw</span><span class="p">[</span><span class="s1">&#39;Count&#39;</span><span class="p">]</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">failed_kw</span><span class="p">[</span><span class="s1">&#39;Count&#39;</span><span class="p">]))</span>
+<span class="n">failed_kw</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[190]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Stemmed Words</th> <th>Count</th> <th>Proportion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>polic        </td> <td>55   </td> <td>0.000710328</td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>death        </td> <td>52   </td> <td>0.000142066</td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>nuditi       </td> <td>51   </td> <td>0.000142066</td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>relationship </td> <td>48   </td> <td>0.000710328</td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>femal        </td> <td>47   </td> <td>0.00170479 </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>love         </td> <td>40   </td> <td>0.000142066</td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>refer        </td> <td>38   </td> <td>0.000284131</td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>male         </td> <td>38   </td> <td>0.000142066</td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>word         </td> <td>38   </td> <td>0.000142066</td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>murder       </td> <td>37   </td> <td>0.000284131</td>
+        </tr>
+    </tbody>
+</table>
+<p>... (2544 rows omitted)</p
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[191]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">passed_kw</span> <span class="o">=</span> <span class="n">passed_kw</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">,</span> <span class="n">descending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;Proportion&#39;</span><span class="p">,</span> \
+                                                 <span class="n">passed_kw</span><span class="p">[</span><span class="s1">&#39;Count&#39;</span><span class="p">]</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">passed_kw</span><span class="p">[</span><span class="s1">&#39;Count&#39;</span><span class="p">]))</span>
+<span class="n">passed_kw</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[191]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Stemmed Words</th> <th>Count</th> <th>Proportion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>relationship </td> <td>160  </td> <td>0.000253507</td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>femal        </td> <td>147  </td> <td>8.45023e-05</td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>nuditi       </td> <td>88   </td> <td>0.00101403 </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>woman        </td> <td>77   </td> <td>8.45023e-05</td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>school       </td> <td>73   </td> <td>0.000169005</td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>sex          </td> <td>71   </td> <td>0.00160554 </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>refer        </td> <td>70   </td> <td>0.000676018</td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>love         </td> <td>68   </td> <td>8.45023e-05</td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>daughter     </td> <td>67   </td> <td>0.000169005</td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>mother       </td> <td>64   </td> <td>8.45023e-05</td>
+        </tr>
+    </tbody>
+</table>
+<p>... (3368 rows omitted)</p
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Time-Series-Analysis">Time Series Analysis<a class="anchor-link" href="#Time-Series-Analysis">&#182;</a></h3><p>Compare the years of those that passed with those that didn't pass</p>
+<h3 id="Which-words-are-most-distinctly-negative?">Which words are most distinctly negative?<a class="anchor-link" href="#Which-words-are-most-distinctly-negative?">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[206]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">joined_kw</span> <span class="o">=</span> <span class="n">k_tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Stemmed Words&quot;</span><span class="p">,</span> <span class="n">passed_kw</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Stemmed Words&quot;</span><span class="p">,</span> <span class="n">failed_kw</span><span class="p">)</span>
+<span class="n">joined_kw</span> <span class="o">=</span> <span class="n">joined_kw</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;Negative Emphasis&#39;</span><span class="p">,</span> <span class="n">joined_kw</span><span class="p">[</span><span class="s1">&#39;Count_3&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">joined_kw</span><span class="p">[</span><span class="s1">&#39;Count&#39;</span><span class="p">])</span>
+<span class="n">joined_kw</span> <span class="o">=</span> <span class="n">joined_kw</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;Negative Disparity&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">joined_kw</span><span class="p">[</span><span class="s1">&#39;Proportion_2&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">joined_kw</span><span class="p">[</span><span class="s1">&#39;Proportion&#39;</span><span class="p">])</span><span class="o">*</span><span class="n">joined_kw</span><span class="p">[</span><span class="s1">&#39;Count&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">joined_kw</span> <span class="o">=</span> <span class="n">joined_kw</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;Negative Disparity&#39;</span><span class="p">,</span> <span class="n">descending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">joined_kw</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/opt/conda/lib/python3.5/site-packages/ipykernel/__main__.py:2: RuntimeWarning: invalid value encountered in true_divide
+  from ipykernel import kernelapp as app
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt output_prompt">Out[206]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Stemmed Words</th> <th>Count</th> <th>Count_2</th> <th>Proportion</th> <th>Count_3</th> <th>Proportion_2</th> <th>Negative Emphasis</th> <th>Negative Disparity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>sister       </td> <td>53   </td> <td>47     </td> <td>8.45023e-05</td> <td>6      </td> <td>0.00667708  </td> <td>0.113208         </td> <td>34.9407           </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>femal        </td> <td>194  </td> <td>147    </td> <td>8.45023e-05</td> <td>47     </td> <td>0.00170479  </td> <td>0.242268         </td> <td>31.4335           </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>war          </td> <td>28   </td> <td>18     </td> <td>8.45023e-05</td> <td>10     </td> <td>0.00355164  </td> <td>0.357143         </td> <td>9.70799           </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>relationship </td> <td>208  </td> <td>160    </td> <td>0.000253507</td> <td>48     </td> <td>0.000710328 </td> <td>0.230769         </td> <td>9.50188           </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>base         </td> <td>74   </td> <td>49     </td> <td>0.000253507</td> <td>25     </td> <td>0.00142066  </td> <td>0.337838         </td> <td>8.63691           </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>open         </td> <td>26   </td> <td>13     </td> <td>0.000253507</td> <td>13     </td> <td>0.00355164  </td> <td>0.5              </td> <td>8.57515           </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>attempt      </td> <td>26   </td> <td>20     </td> <td>0.000338009</td> <td>6      </td> <td>0.00340958  </td> <td>0.230769         </td> <td>7.98607           </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>polic        </td> <td>115  </td> <td>60     </td> <td>8.45023e-05</td> <td>55     </td> <td>0.000710328 </td> <td>0.478261         </td> <td>7.197             </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>night        </td> <td>16   </td> <td>9      </td> <td>8.45023e-05</td> <td>7      </td> <td>0.00440403  </td> <td>0.4375           </td> <td>6.91125           </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>blood        </td> <td>43   </td> <td>31     </td> <td>8.45023e-05</td> <td>12     </td> <td>0.00156272  </td> <td>0.27907          </td> <td>6.35634           </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (1528 rows omitted)</p
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[221]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Exporting to csv</span>
+<span class="n">word_list</span> <span class="o">=</span> <span class="n">joined_kw</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;Negative Disparity&#39;</span><span class="p">,</span> <span class="s1">&#39;Stemmed Words&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span>
+<span class="n">clean</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">word_list</span> <span class="o">=</span> <span class="n">word_list</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;Negative Disparity&#39;</span><span class="p">,</span> <span class="n">word_list</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">clean</span><span class="p">,</span> <span class="s2">&quot;Negative Disparity&quot;</span><span class="p">))</span>
+<span class="n">word_list</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;word_list&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="word_cloud_negative_disparity.png"></p>
 
 </div>
 </div>
@@ -12136,7 +12589,17 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Conclusion-of-Analysis">Conclusion of Analysis<a class="anchor-link" href="#Conclusion-of-Analysis">&#182;</a></h3><p>This is what we think --</p>
+<h2 id="Time-Series-Analysis">Time Series Analysis<a class="anchor-link" href="#Time-Series-Analysis">&#182;</a></h2><p>Compare the years of those that passed with those that didn't pass</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conclusion-of-Analysis">Conclusion of Analysis<a class="anchor-link" href="#Conclusion-of-Analysis">&#182;</a></h2><p>This is what we think --</p>
 
 </div>
 </div>
